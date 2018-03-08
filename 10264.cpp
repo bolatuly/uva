@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//NOT SOLVED YET
+
 int main() {
 
     int dim;
@@ -22,10 +22,11 @@ int main() {
             int sum = 0;
             for (int j = 0; j < dim; j++) {
                 int b = i ^(1 << j);
-                sum += edges_array[b] + edges_array[i];
+                sum += edges_array[b];
             }
             sums[i] = sum;
         }
+
         int max = 0;
         for (int i = 0; i < 1 << dim; i++) {
             for (int j = 0; j < dim; j++) {
@@ -36,5 +37,6 @@ int main() {
         }
         cout << max << endl;
     }
+
     return 0;
 }
